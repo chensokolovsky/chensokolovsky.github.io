@@ -1,0 +1,316 @@
+<html>
+    <head>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                              // Add smooth scrolling to all links
+                              $("a").on('click', function(event) {
+                                        
+                                        // Make sure this.hash has a value before overriding default behavior
+                                        if (this.hash !== "") {
+                                        // Prevent default anchor click behavior
+                                        event.preventDefault();
+                                        
+                                        // Store hash
+                                        var hash = this.hash;
+                                        
+                                        // Using jQuery's animate() method to add smooth page scroll
+                                        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                                        $('html, body').animate({
+                                                                scrollTop: $(hash).offset().top
+                                                                }, 800, function(){
+                                                                
+                                                                // Add hash (#) to URL when done scrolling (default click behavior)
+                                                                window.location.hash = hash;
+                                                                });
+                                        } // End if
+                                        });
+                              });
+            </script>
+        
+        <style>
+            .bkgContainer {
+                position:relative;
+                margin:auto;
+                width:800px;
+            }
+
+
+        .bkgImg {
+            position:absolute;
+            top:0px;
+            display:block;
+            width:800px;
+        }
+        
+        .lowerSection {
+            width:800px;
+        }
+        
+        .hoverZone {
+            width:100;
+            height:100;
+        }
+        
+        .rotatedText {
+            position:absolute;
+            height:25;
+            transition: top 0.3s, left 0.3s;
+
+        }
+        
+        .about {
+            content:url('c2/about.png');
+             top:323px;
+             left:195px;
+             transform: rotate(10deg);
+        }
+        
+        .fivedv {
+            content:url('c2/5dv.png');
+            top:185px;
+            left:170px;
+            transform: rotate(45deg);
+        }
+        
+        .iosApps {
+            content:url('c2/iosApps.png');
+            top:190px;
+            left:313px;
+            transform: rotate(75deg);
+        }
+        
+        
+        .music {
+            content:url('c2/music.png');
+            top:113px;
+            left:410px;
+            transform: rotate(288deg);
+        }
+  
+        
+        .contact {
+            content: url('c2/contact.png');
+            top:230px;
+            left:480px;
+            transform: rotate(317deg);
+        }
+        
+        
+        .private {
+            content: url('c2/private.png');
+            top:350px;
+            left:570px;
+        }
+        
+        
+        
+        .flipingIcon {
+            position:absolute;
+            height: 70px;
+            width: 70px;
+            transition: transform 0.5s;
+             pointer-events: none;
+        }
+        
+        .hoverZone {
+            position:absolute;
+            height:70px;
+            width:70px;
+            content: url('clear.png');
+        }
+        
+        .rayGroup:hover  .flipingIcon {
+            transform: rotateY(180deg);
+        }
+        
+        .aboutGroup:hover .about {
+            content: url('c3/about.png');
+            top: 348px;
+            left: 192px;
+        }
+        
+        .fiveDVGroup:hover .fivedv {
+            content: url('c3/5dv.png');
+            top: 205px;
+            left: 150px;
+        }
+        
+        .iosAppsGroup:hover .iosApps {
+            content: url('c3/iosApps.png');
+            top: 196px;
+            left: 285px;
+        }
+        
+        .musicGroup:hover .music {
+            content: url('c3/music.png');
+            top: 123px;
+            left: 436px;
+        }
+        
+        .contactGroup:hover .contact {
+            content: url('c3/contact.png');
+            top: 248px;
+            left: 498px;
+        }
+        
+        .privateFlippingIcon {
+            position:absolute;
+            height: 45px;
+            width: 45px;
+            transition: transform 0.5s;
+        }
+        
+        .privateGroup:hover .privateIcon {
+            transform: rotateX(180deg);
+        }
+        .privateGroup:hover .private {
+            content: url('c3/private.png');
+            top: 375px;
+        }
+        
+        /*
+        .privateFlippingIcon:hover {
+            transform: rotateX(180deg);
+        }
+         */
+        .spacer {
+            width:100%;
+            height:250px;
+            position:absolute;
+        }
+        .lowerSection {
+            width:920px;
+            margin:auto;
+            position:absolute;
+        }
+ 
+        .lowerSectionDiv {
+            width:920px;
+
+            position:relative;
+            margin:auto;
+            display:block;
+        }
+        
+        .spacerDiv {
+            position:relative;
+            margin:auto;
+            display:block;
+        }
+        
+        .topButton {
+            position:absolute;
+            display:block;
+            background-color: clear;
+            opacity: 0.3;
+            width:60;
+            height:60;
+        }
+        
+        .linkToPage {
+            position:absolute;
+            display:block;
+            background-color: clear;
+            opacity: 0.3;
+            height:30;
+        }
+       
+        </style>
+       
+    </head>
+    <body>
+        
+        <div class="bkgContainer">
+          <img  class="bkgImg" src = "bkgs/ChenCloudNoText.png" id="topRef">
+          <a class="rayGroup aboutGroup" href="#aboutSectionRef">
+          <img class="hoverZone" style="top:300px;left:145px;">
+          <img class="flipingIcon aboutIcon" src="icons/about.png" style="top: 300px;left:145px;">
+          <img class="rotatedText about">
+            </a>
+          
+          
+          <a class="rayGroup fiveDVGroup" href="#fivedvSectionRef">
+          <img class="hoverZone" style="top:215px; left:230px;">
+          <img class="flipingIcon fivedvIcon" src="icons/5dv.png" style="top: 215px;left:230px;">
+          <img class="rotatedText fivedv">
+          </a>
+          
+          <a class="rayGroup iosAppsGroup" href="#iosappsSectionRef">
+              <img class="hoverZone" style="top:90px;left:300px;">
+            <img class="flipingIcon iosAppsIcon" src="icons/iosApps.png" style="top: 90px;left:300px;">
+            <img class="rotatedText iosApps">
+            </a>
+
+            <a class="rayGroup musicGroup" href="#musicSectionRef">
+            <img class="hoverZone" style="top:160px;left:422px;">
+            <img class="flipingIcon musicIcon" src="icons/music.png" style="top: 160px;left:422px;">
+            <img class="rotatedText music">
+            </a>
+
+            <a class="rayGroup contactGroup" href="#contactSectionRef">
+            <img class="hoverZone" style="top:155px;left:570px;">
+            <img class="flipingIcon contactIcon" src="icons/contact.png" style="top: 155px;left:570px;">
+            <img class="rotatedText contact">
+            </a>
+            
+            <div class="privateGroup">
+                <img class="hoverZone" style="top:350px;left:540px;">
+                <img class="privateFlippingIcon privateIcon" src="icons/private.png" style="top: 350px;left:540px;">
+                <img class="rotatedText private">
+            </div>
+        </div>
+        
+        <div class="spacerDiv">
+            <img  class="spacer"  src="lowerParts/spacer.png" style="top:500px;">
+        </div>
+        <!--about-->
+        <div  class="lowerSectionDiv">
+            <img class="lowerSection" id="aboutSectionRef" src="lowerParts/about.png" style="top:750px;">
+            <a class="topButton" href="#topRef" style="top:760px; left:800px;"> </a>
+        </div>
+        <div class="spacerDiv">
+            <img  class="spacer"  src="lowerParts/spacer.png" style="top:1100px;">
+                </div>
+        <!--5dv-->
+        <div  class="lowerSectionDiv">
+            <img class="lowerSection" id="fivedvSectionRef" src="lowerParts/fivedv.png" style="top:1350px;">
+                <a class="topButton" href="#topRef" style="top:1360px; left:800px;"> </a>
+                <a class="linkToPage" href="http://5dv.org" style="top:1615px; left:690px; width:60px;" target="_blank"></a>
+                </div>
+        <div class="spacerDiv">
+            <img  class="spacer"  src="lowerParts/spacer.png" style="top:1750px;">
+                </div>
+        <!--iosapps-->
+        <div  class="lowerSectionDiv">
+            <img class="lowerSection" id="iosappsSectionRef" src="lowerParts/iosapps.png" style="top:2000px;">
+                <a class="topButton" href="#topRef" style="top:2010px; left:800px;"> </a>
+                 <a class="linkToPage" href="http://csiphone.chencloud.com/index.html" style="top:2315px; left:620px; width:60px;" target="_blank"></a>
+                </div>
+        <div class="spacerDiv">
+            <img  class="spacer"  src="lowerParts/spacer.png" style="top:2400px;">
+                </div>
+        <!--music-->
+        <div  class="lowerSectionDiv">
+            <img class="lowerSection" id="musicSectionRef" src="lowerParts/music.png" style="top:2650;">
+                <a class="topButton" href="#topRef" style="top:2660px; left:800px;"> </a>
+                 <a class="linkToPage" href="https://www.youtube.com/user/chensokolovsky" style="top:2845px; left:740px; width:85px;" target="_blank"></a>
+
+                </div>
+        <div class="spacerDiv">
+            <img  class="spacer"  src="lowerParts/spacer.png" style="top:2950px;">
+                </div>
+        <!--contact-->
+        <div  class="lowerSectionDiv">
+            <img class="lowerSection" id="contactSectionRef" src="lowerParts/contact.png" style="top:3200;">
+                <a class="topButton" href="#topRef" style="top:3210px; left:800px;"> </a>
+
+                </div>
+        <div class="spacerDiv">
+            <img  class="spacer"  src="lowerParts/spacer.png" style="top:3500px;">
+                <p style="color:white; top:3700px; position:absolute; width:100%; margin:auto; display:block; text-align: center;"> © Chen Sokolovsky 2017 </p>
+                </div>
+        
+    </body>
+</html>

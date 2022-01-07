@@ -1,0 +1,262 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+              // Add smooth scrolling to all links
+              $("a").on('click', function(event) {
+                        
+                        // Make sure this.hash has a value before overriding default behavior
+                        if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+                        
+                        // Store hash
+                        var hash = this.hash;
+                        
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                            }, 800, function(){
+                            
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                            });
+                        } // End if
+                        });
+              });
+              
+              
+              function on() {
+                  document.getElementById("overlay").style.display = "block";
+              }
+        
+              function off() {
+              document.getElementById("overlay").style.display = "none";
+            }
+        </script>
+        
+
+        <style>
+            .bkgImage {
+                width:100%;
+            }
+            .logo {
+                top:50;
+                left:30;
+                width:80%;
+                max-height:150;
+                max-width:150;
+                min-height:20;
+                min-width:20;
+                display:block;
+                margin:auto;
+            }
+            .logoBottom {
+                width:20%;
+                max-height:150;
+                max-width:150;
+                min-height:20;
+                min-width:20;
+                display:block;
+                margin:auto;
+            }
+
+            .logoDiv {
+                position:absolute;
+                width:20%;
+                top:30;
+            }
+            
+            
+            .topMenu {
+                margin-right:0;
+                color: white;
+                top:30;
+                line-height:10%;
+                position:absolute;
+                text-align:center;
+                font-size:150%;
+                width:95%;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            
+            .menuA {
+                color:white;
+                text-decoration: none;
+
+            }
+            .arrowDown {
+                display:block;
+                height:40px;
+                margin:auto;
+            }
+            
+            .paragraph {
+
+                background-color:deepskyblue;
+                width:100%;
+                margin:auto;
+                text-align:center;
+                color:white;
+                background-color:clear;
+                font-family: Arial, Helvetica, sans-serif;
+
+            }
+        
+            .arrowImage {
+                max-width:100%;
+                max-height:100%;
+                margin:auto;
+                display:block;
+                clear:both;
+            }
+            
+            .paragraphText {
+                margin-top:60px;
+                margin-bottom:60px;
+                font-size:140%;
+                width:75%;
+                margin:auto;
+            }
+            .faqText {
+                margin-top:15px;
+                margin-bottom:15px;
+                font-size:120%;
+                width:90%;
+                margin-left:5%;
+                text-align:left;
+            }
+            
+            
+            h4 {
+                color:black;
+            }
+
+            .topRef {
+                top:0px;
+                width:100%;
+                text-align:right;
+                color:deepskyblue;
+            }
+
+
+            #overlay {
+                position: fixed;
+                display: none;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0,0,0,0.8);
+                z-index: 2;
+                cursor: pointer;
+            }
+            
+            #overlaytext{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                font-size: 30px;
+                color: white;
+                text-align:center;
+                transform: translate(-50%,-50%);
+            }
+        #donateButton {
+            left:50%;
+            top:50%;
+        }
+
+        </style>
+    </head>
+    <body>
+        
+        <div id="overlay" onclick="off()">
+            <div id="overlaytext">
+                5dv is currently non-profit. Any donation will help making the world a cooler place!<br>
+            <form id="donateButton" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="PQC7BN5S4HJXW">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/IL/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+            </div>
+
+
+        </div>
+        
+        <!--bkg-->
+        <div class="bkgImage" id="topOfPage">
+        <img src="imgs/table.png" style="width:100%"/>
+        <div class="topMenu"><a class="menuA" href="#about">About</a> | <a class="menuA" href="#collaborate">Collaborate</a> | <a class="menuA" href="#FAQ">FAQ</a> | <a  class="menuA" href="#contact">Contact</a></div>
+        <br>
+        </div>
+        <div class="logoDiv"><img class="logo" src="imgs/logo-white.png"/></div>
+
+        <!--about-->
+        <a class="arrowDown firstScroll" href="#about"><img class="arrowImage" src="imgs/arrow.png"/></a>
+        <div class="paragraph" id="about">
+        <div class="paragraphText"><br><br><h3>About</h3><br>5dv stands for five dimensional vision. It is a futuristic file/stream format and protocol designed for a non-yet-existing real 3 dimensional device. This device will be theoretically structured using a 3 dimensional matrix of 100% transparent OLED pixels, each containing RGB and alpha values. The main portion of this protocol is the compression. Based on the JPEG and mp4 (h.264) formats, every step is applied in 3 dimension.
+            Check out the <a href="#FAQ">FAQ</a> section below.
+            Contribution is welcome in the form of <a href="#about" onclick="on()">donation</a> or <a href="#collaborate">coding</a>. To find out more about me, check my <a href="http://chencloud.com">personal page</a><br><br><br><br><br>
+        </div>
+        </div>
+        
+        <!--collaborate-->
+         <a class="arrowDown firstScroll" href="#collaborate"><img class="arrowImage" src="imgs/arrow.png"/></a>
+         <div class="paragraph" id="collaborate">
+             <div class="paragraphText"><br><br><h3>Contribute</h3><br>To make a donation press <a href="#contribute" onclick="on()">here.</a><br>For programmers: This project is available on <a href="https://github.com/chensokolovsky/5dv">git</a>. There, you can find the specification and protocol of the format. Just follow the readme file. The code is written entirely in C and it uses SDL for drawing. You are welcome to contribute to the code, but it is not an open souece project. It is published under a special freeware <a href="https://github.com/chensokolovsky/5dv/blob/master/LICENSE">license</a>. If you want to be a part of this please <a href="#contact">contact me</a><br><br><br><br><br>
+             </div>
+         </div>
+         
+         <!--FAQ-->
+         <a class="arrowDown firstScroll" href="#FAQ"><img class="arrowImage" src="imgs/arrow.png"/></a>
+         <div class="paragraph" id="FAQ">
+             <div class="paragraphText"><br><h3>FAQ</h3></div>
+             <div class="faqText"
+                 ><h4>What is the 5dv file format good for?</h4>
+                 Currently, for nothing. But, in the future it will help futuristic real 3 dimensional devices compress and stream images and movies<br>
+                 <h4>Why aren't there such devices today?</h4>
+                 Transparent OLED screens started to appear on 2012. However, they are not 100% clear, so placing them in sequence won't work until the pixels are 100% transparent.<br>
+                 <h4>Is anyone trying to make such device?</h4>
+                 I am in touch with one company that do amazing stuff with 3 dimensional displays, LED cubes and holograms, called <a href="https://lookingglassfactory.com/">Looking Glass</a>. You should check out their page and products. However, the 5dv format can't be used on these devices since it is still impossible to create a 100% pixel with an alpha component of 0<br>
+                 <h4>I want to see the code or even help programming this format</h4>
+                 The <a href="https://github.com/chensokolovsky/5dv">git</a> contains all the code, specification, technical data of the project. You should start from the readme file and from there you'll get a clue how to find what you are looking for, what parts of the code still needs to be writted or updated etc...<br>
+                 <h4>Is this open source code?</h4>
+                 No. This is published under a special freewere <a href="https://github.com/chensokolovsky/5dv/blob/master/LICENSE">license</a>. You may see the code, download it and use it for your personal use, but do not redistribute it. If you wish to contribute/add code, please <a href="#contact">contact me</a><br>
+                 <h4>What do I need to know in order to help program this?</h4>
+                 The entire project is in C and uses SDL as the drawing engine. Besides from C, you'll need some backround on multimedia media compression such as audio compression, image compression and video compression techniques.<br>
+                 <h4>When do you think we will be able to see the first devices?</h4>
+                 This is just an estimation, but I think that by 2023 we will see such devices for the first time, and by 2026 they will become commertial.<br>
+                 <h4>The code describes a 3d matrix of pixels in the shape of a box. Why are the illustration all look like spheres?</h4>
+                 If you saw the lecture, you know that I had a dream about this device, and what I saw in the dream was a crystal ball with changing content. Other than that, there might be an issue with a cuboid device because of snell's law. See this <a href="https://www.boundless.com/physics/textbooks/boundless-physics-textbook/geometric-optics-24/reflection-refraction-and-dispersion-169/the-law-of-refraction-snell-s-law-and-the-index-of-refraction-608-7726/">link</a> for an example<br>
+                 <h4>What does 5dv stand for and why?</h4>
+                 Five Dimensional Vision. There are real 3 dimensions displays (x,y,z) + In a movie there is time dimension, so that's 4. The fifth could be either Sound, or the strong belief and extra factor that must happen in order to make this dream a reality.<br>
+                 <br><br><br><br>
+             </div>
+         </div>
+         
+         <!--contact-->
+         <a class="arrowDown firstScroll" href="#contact"><img class="arrowImage" src="imgs/arrow.png"/></a>
+         <div class="paragraph" id="contact">
+             <div class="paragraphText"><br><br><h3>Contact</h3><br>Please feel free to caontact me with any questions, thoughts and comments. Please, no spam, marketing or advertisment emails. chen@5dv.org<br><br><br><br><br>
+             </div>
+         </div>
+
+
+        <div class="bkgImage">
+            <img src="imgs/dream.png" style="width:100%"/>
+            <img class="logoBottom" src="imgs/logo-blue.png"/>
+            <p style="width=100%; text-align:center; color:deepskyblue; font-family: Arial, Helvetica, sans-serif;
+">© 5dv.org Chen Sokolovsky 2017</p>
+        </div>
+     
+    
+
+
+
+    </body>
+</html>
